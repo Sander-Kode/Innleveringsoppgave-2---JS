@@ -155,6 +155,29 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 
 // Skriv koden for oppgave 4 her
 
+
+// Her løser jeg koden på ordinær måte med function hvor jeg beholder alt mellom første 1 og siste -1 steg i arrayet
+function myArrayFunction(array){
+    return array.slice(1, -1);
+
+}
+
+//consol.log kun for å teste min egen kode
+console.log(myArrayFunction(["Rød","Grønn", "Blå", "Rosa", "Gul"]));
+
+
+//Her løser jeg oppgaven med arrowfunction og tall istedet
+const myArrayFunctionArrow = (array) => array.slice(1, -1);
+
+
+//consol.log kun for å teste min egen kode
+console.log(myArrayFunctionArrow([1,2,3,4]));
+
+
+
+
+
+
 /******************************************************************************
 5.
 
@@ -176,6 +199,27 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 
 // Skriv koden for oppgave 5 her
 
+
+//Her bruker jeg replace og trim for å bytte ut (ord1, med ORD2) og fjerne eventuelle mellomrom på ytterkantene med .trim()
+
+function myAlteredString(inputString){
+    return inputString.replace("vanskelig", "gøy").trim();
+
+}
+
+//Test av funksjon
+console.log(myAlteredString("     Javascript er vanskelig.        "))
+
+//Kan også løses med arrowfunction
+
+const myAlteredStringArrow = (inputString) => inputString.replace("vanskelig", "gøy").trim();
+
+
+//Test av funksjon
+console.log(myAlteredStringArrow("                  Det er vanskelig å sykle             "));
+
+
+
 /******************************************************************************
 6.
 
@@ -185,6 +229,7 @@ fullføres ved å bruke passende array-metoder.
 *******************************************************************************/
 
 const items = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
+
 
 /*******************************************************************************
 Steg 1: Fjern det første elementet ("Bok") fra arrayen ved hjelp av riktig metode.
@@ -201,6 +246,12 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 
 // Skriv koden for oppgave 6 her
 
+function myModifiedArray(items){
+    items.shift();
+    return items;
+}
+
+console.log(myModifiedArray((items)))
 /******************************************************************************
 7.
 
