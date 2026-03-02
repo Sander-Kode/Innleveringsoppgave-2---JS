@@ -323,6 +323,28 @@ Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
 
 // Skriv koden for oppgave 7 her
 
+//Har brukt alt for mange timer på denne oppgaven, men her går funksjonen inn å ser om stringen finnes i arrayet, om det gjør det så returnerer den verdien 1, om ikke -1. Om den returnerer 1 så fjerner funksjonen den indexen fra arrayet og retunerer det. om ikke så pusher han ut begge.
+function myChecker(array, string){
+        const index = array.indexOf(string);
+        if (index !== -1){
+            array.splice(index, 1);
+        } else {
+            array.push(string);
+        } 
+
+        return array;
+        
+        
+
+}
+console.log(myChecker(["rød", "grønn"],"blå"));
+console.log(myChecker(["Rød", "Grønn", "Blå"], "Grønn"));
+console.log(myChecker(["En", "To", "Tre"], "Fire"));
+console.log(myChecker(["En", "To", "Tre"], "To"));
+
+
+
+
 /******************************************************************************
 8.
 
