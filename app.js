@@ -23,26 +23,23 @@ funksjonen)
 
 // Skriv koden for oppgave 1 her
 
-let number = 5;
-let msg = "";
+
 
 
 //En funksjon som sier at om restverdi = 0, så er tallet et partall.
 
-function oppgave1(){
+function oppgave1(number){
     if (number % 2 === 0){
-        msg = "Partall";
-        return msg;
+        return "Partall";
     } else {
-        msg = "Oddetall";
-        return msg;
+        return "Oddetall";
         
     }
 
 
 }
 
-console.log(oppgave1());
+console.log(oppgave1(5));
 
 
 
@@ -246,15 +243,57 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 
 // Skriv koden for oppgave 6 her
 
+
+//Her sier funksjonen gå inn i items, fjern første punkt i arrayet, så går du inn i arrayet og finner "Viskelær", start der og fjern den, erstatt den med "Linjal", så starter du i begynnelsen av arrayet og fjerner 2 elementer, for så å kombinere de til en string
 function myModifiedArray(items){
     items.shift();
-    const index = items.indexOf("Viskelær")
-    items[index] ="Linjal";
-    
-    return items;
+    items.splice(items.indexOf("Viskelær"),1, "Linjal");
+    items.splice(0, 2, "Markeringspenn")
+    return items.join(" | ");
 }
 
+
+//For å teste egen funksjon
+
 console.log(myModifiedArray(items))
+
+
+
+
+//Ekstra utfordring - ble litt usikker på om oppgaven ville at jeg skulle filtrere ut elemtenter med ("e") fra eksisterende array eller lage et nytt array, men lagde hvertfall et nytt her.
+
+
+const myItems = ["Telefon", "Kontroll", "Bil", "Flaske", "Penn"]
+
+
+//Forsøk 1, funket dårlig.
+
+// function checkIfContainsE(item){
+//     myItems.filter(checkIfContainsE);
+//     return item.includes("e");
+    
+// }
+
+
+
+// Etter litt om og men på w3 schools og en del google søk, fant jeg ut at jeg må kalle på filteret utenfor funksjonen. Da gikk det
+
+
+function checkIfContainsE(item){
+    return item.includes("e");
+
+}
+
+const onlyE = myItems.filter(checkIfContainsE);
+
+
+console.log(onlyE)
+
+
+
+
+
+
 
 
 
