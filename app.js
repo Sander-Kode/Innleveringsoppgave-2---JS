@@ -248,10 +248,16 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 
 function myModifiedArray(items){
     items.shift();
+    const index = items.indexOf("Viskelær")
+    items[index] ="Linjal";
+    
     return items;
 }
 
-console.log(myModifiedArray((items)))
+console.log(myModifiedArray(items))
+
+
+
 /******************************************************************************
 7.
 
